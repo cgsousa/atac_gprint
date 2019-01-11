@@ -1,0 +1,8 @@
+--// (+)
+--// 20.3.2018-Campo para controle de agrupamento de pontos de impressão
+--//
+alter table printerpp00 
+  add pp0_codppr smallint null
+go
+alter table printerpp00 
+  add constraint fk__pp0_codppr foreign key (pp0_codppr) references printerpp00(pp0_codseq) 

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/10/04 09:11:16.881.dproj,C:\Users\Desenvolvimento-pc\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Desenvolvimento-pc\Documents\RAD Studio\Projects\ATAC_MPRINTER_000.dproj</Transaction>
+    <Transaction>2017/10/06 15:13:23.703.pas,D:\develop\projetos\SisGerCom.D2010\Unit1.pas=D:\develop\projetos\SisGerCom.D2010\view\Form.CodBarFC.pas</Transaction>
+    <Transaction>2017/10/06 15:13:23.703.dfm,D:\develop\projetos\SisGerCom.D2010\Unit1.dfm=D:\develop\projetos\SisGerCom.D2010\view\Form.CodBarFC.dfm</Transaction>
+    <Transaction>2017/10/06 15:13:45.488.pas,D:\develop\projetos\SisGerCom.D2010\view\Form.CodBarFC.pas=</Transaction>
+    <Transaction>2017/10/06 15:13:45.488.dfm,D:\develop\projetos\SisGerCom.D2010\view\Form.CodBarFC.dfm=</Transaction>
+    <Transaction>2017/10/11 14:24:40.335.pas,D:\develop\projetos\SisGerCom.D2010\Unit1.pas=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.PrinterPP00.pas</Transaction>
+    <Transaction>2017/10/11 14:24:40.359.dfm,D:\develop\projetos\SisGerCom.D2010\Unit1.dfm=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.PrinterPP00.dfm</Transaction>
+    <Transaction>2017/10/11 14:24:48.893.pas,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.PrinterPP00.pas=</Transaction>
+    <Transaction>2017/10/11 14:24:48.893.dfm,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.PrinterPP00.dfm=</Transaction>
+    <Transaction>2017/10/16 09:39:32.024.pas,D:\develop\projetos\SisGerCom.D2010\view\Form.CodBarFC.pas=</Transaction>
+    <Transaction>2017/10/16 09:39:32.024.dfm,D:\develop\projetos\SisGerCom.D2010\view\Form.CodBarFC.dfm=</Transaction>
+    <Transaction>2017/10/19 08:59:08.231.pas,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.PrintPontoList.pas=</Transaction>
+    <Transaction>2017/10/19 08:59:08.231.dfm,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.PrintPontoList.dfm=</Transaction>
+    <Transaction>2017/10/20 10:39:03.679.pas,D:\develop\projetos\SisGerCom.D2010\Unit1.pas=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.Etiqueta.pas</Transaction>
+    <Transaction>2017/10/20 10:39:03.679.dfm,D:\develop\projetos\SisGerCom.D2010\Unit1.dfm=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.Etiqueta.dfm</Transaction>
+    <Transaction>2017/10/20 10:53:49.436.pas,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.Etiqueta.pas=</Transaction>
+    <Transaction>2017/10/20 10:53:49.436.dfm,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.Etiqueta.dfm=</Transaction>
+    <Transaction>2017/10/30 12:05:43.482.pas,D:\develop\projetos\SisGerCom.D2010\Unit1.pas=D:\develop\projetos\SisGerCom.D2010\units\uresumofin.pas</Transaction>
+    <Transaction>2017/11/01 10:42:57.573.pas,D:\develop\projetos\SisGerCom.D2010\units\uresumofin.pas=</Transaction>
+    <Transaction>2018/01/03 10:15:22.703.pas,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.Etiqueta.pas=</Transaction>
+    <Transaction>2018/01/03 10:15:22.703.dfm,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.Etiqueta.dfm=</Transaction>
+    <Transaction>2018/01/18 15:10:00.700.pas,D:\develop\projetos\SisGerCom.D2010\Unit1.pas=D:\develop\projetos\SisGerCom.D2010\view\nfe\Form.Princ00.pas</Transaction>
+    <Transaction>2018/01/18 15:10:00.719.dfm,D:\develop\projetos\SisGerCom.D2010\Unit1.dfm=D:\develop\projetos\SisGerCom.D2010\view\nfe\Form.Princ00.dfm</Transaction>
+    <Transaction>2018/01/25 17:08:10.399.pas,D:\develop\projetos\SisGerCom.D2010\view\nfe\Form.Princ00.pas=</Transaction>
+    <Transaction>2018/01/25 17:08:10.403.dfm,D:\develop\projetos\SisGerCom.D2010\view\nfe\Form.Princ00.dfm=</Transaction>
+    <Transaction>2018/05/07 08:49:28.609.pas,D:\develop\projetos\SisGerCom.D2010\Unit1.pas=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.EtiquetaRL.pas</Transaction>
+    <Transaction>2018/05/07 08:49:28.609.dfm,D:\develop\projetos\SisGerCom.D2010\Unit1.dfm=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.EtiquetaRL.dfm</Transaction>
+    <Transaction>2018/05/07 10:45:10.036.pas,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.EtiquetaRL.pas=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.BaseReportRL.pas</Transaction>
+    <Transaction>2018/05/07 10:45:10.036.dfm,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.EtiquetaRL.dfm=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.BaseReportRL.dfm</Transaction>
+    <Transaction>2018/05/07 10:51:00.943.pas,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.BaseReportRL.pas=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.BaseEtqRL.pas</Transaction>
+    <Transaction>2018/05/07 10:51:00.943.dfm,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.BaseReportRL.dfm=D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.BaseEtqRL.dfm</Transaction>
+    <Transaction>2018/05/07 10:52:07.699.pas,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.BaseEtqRL.pas=</Transaction>
+    <Transaction>2018/05/07 10:52:07.699.dfm,D:\develop\projetos\SisGerCom.D2010\view\configuracoes\Form.BaseEtqRL.dfm=</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="units"/>
+    <File Path="units\uprinter.pas"/>
+    <File Path="view"/>
+    <File Path="view\configuracoes"/>
+    <File Path="view\configuracoes\Form.Print00.pas"/>
+    <File Path="view\configuracoes\Form.Print00.dfm"/>
+    <File Path="view\configuracoes\Form.Print00List.pas"/>
+    <File Path="view\configuracoes\Form.Print00List.dfm"/>
+    <File Path="view\configuracoes\Form.Print00Log.pas"/>
+    <File Path="view\configuracoes\Form.Print00Log.dfm"/>
+    <File Path="view\configuracoes\Form.PrinterPP00.pas"/>
+    <File Path="view\configuracoes\Form.PrinterPP00.dfm"/>
+    <File Path="view\configuracoes\Form.Etiqueta.pas"/>
+    <File Path="view\configuracoes\Form.Etiqueta.dfm"/>
+    <File Path="view\configuracoes\Form.BaseEtqRL.pas"/>
+    <File Path="view\configuracoes\Form.BaseEtqRL.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

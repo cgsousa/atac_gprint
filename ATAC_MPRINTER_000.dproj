@@ -20,9 +20,12 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
-			<DCC_UnitSearchPath>.\units;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+			<DCC_UsePackage>rtl;vcl;vclx;vclimg;vclactnband;dbrtl;vcldb;vcldbx;bdertl;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;adortl;IndyCore;IndySystem;IndyProtocols;VclSmp;vclie;inet;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapServer;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;VirtualTreesR;JclVcl;Jcl;JvCore;JvSystem;JvStdCtrls;JvAppFrm;JvBands;JvCmp;JvControls;JvCrypt;JvCustom;JvDB;JvDlgs;JvDocking;JvHMI;JvJans;JvManagedThreads;JvMM;JvNet;JvPageComps;JvPascalInterpreter;JclDeveloperTools;JvPluginSystem;JvPrintPreview;JvRuntimeDesign;JvTimeFramework;JvWizards;JvXPCtrls;tmsd2010;tmsexd2010;tmsxlsd2010;tmswizd2010;QR5RunD2010;Rave110VCL;advchartd2010;frce;ACBr_MDFe;ACBr_DFeComum;ACBr_Comum;ACBr_synapse;ACBr_OpenSSL;ACBr_Diversos;ACBr_Serial;ACBr_Sintegra;ACBr_TXTComum;ACBr_TCP;ACBr_Boleto;ACBr_NFe;ACBr_NFCeECFVirtual;ACBr_NFeDanfeESCPOS;ACBr_TEFD;ACBr_NFeDanfeRL;ACBr_BoletoRL</DCC_UsePackage>
+			<DCC_ExeOutput>..\bin\</DCC_ExeOutput>
+			<DCC_DcuOutput>..\bin\dcu\</DCC_DcuOutput>
+			<DCC_UnitSearchPath>D:\develop\lib\delphi\sistem.lib\units;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
 			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
-			<DCC_DependencyCheckOutputName>ATAC_MPRINTER_000.exe</DCC_DependencyCheckOutputName>
+			<DCC_DependencyCheckOutputName>..\bin\ATAC_MPRINTER_000.exe</DCC_DependencyCheckOutputName>
 			<DCC_ImageBase>00400000</DCC_ImageBase>
 			<DCC_Platform>x86</DCC_Platform>
 		</PropertyGroup>
@@ -40,22 +43,22 @@
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
 			<DCCReference Include="units\uprinter.pas"/>
-			<DCCReference Include="view\configuracoes\Form.Print00Log.pas">
+			<DCCReference Include="forms\Form.Print00Log.pas">
 				<Form>frm_Print00Log</Form>
 			</DCCReference>
-			<DCCReference Include="view\configuracoes\Form.Print00.pas">
+			<DCCReference Include="forms\Form.Print00.pas">
 				<Form>frm_Print00</Form>
 			</DCCReference>
-			<DCCReference Include="view\configuracoes\Form.Print00List.pas">
+			<DCCReference Include="forms\Form.Print00List.pas">
 				<Form>frm_Print00List</Form>
 			</DCCReference>
-			<DCCReference Include="view\configuracoes\Form.PrinterPP00.pas">
+			<DCCReference Include="forms\Form.PrinterPP00.pas">
 				<Form>frm_PrinterPP00</Form>
 			</DCCReference>
-			<DCCReference Include="view\configuracoes\Form.Etiqueta.pas">
+			<DCCReference Include="forms\Form.Etiqueta.pas">
 				<Form>frm_ConfigEtq</Form>
 			</DCCReference>
-			<DCCReference Include="view\configuracoes\Form.BaseEtqRL.pas">
+			<DCCReference Include="forms\Form.BaseEtqRL.pas">
 				<Form>frm_BaseETQ</Form>
 			</DCCReference>
 			<BuildConfiguration Include="Base">
@@ -111,6 +114,9 @@
 						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Integrador.bpl">ACBrIntegrador</Excluded_Packages>
+					</Excluded_Packages>
 				</Delphi.Personality>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>

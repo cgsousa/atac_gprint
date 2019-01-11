@@ -4,12 +4,12 @@ uses
   Forms,
   uadodb,
   uprinter in 'units\uprinter.pas',
-  Form.Print00Log in 'view\configuracoes\Form.Print00Log.pas' {frm_Print00Log},
-  Form.Print00 in 'view\configuracoes\Form.Print00.pas' {frm_Print00},
-  Form.Print00List in 'view\configuracoes\Form.Print00List.pas' {frm_Print00List},
-  Form.PrinterPP00 in 'view\configuracoes\Form.PrinterPP00.pas' {frm_PrinterPP00},
-  Form.Etiqueta in 'view\configuracoes\Form.Etiqueta.pas' {frm_ConfigEtq},
-  Form.BaseEtqRL in 'view\configuracoes\Form.BaseEtqRL.pas' {frm_BaseETQ};
+  Form.Print00Log in 'forms\Form.Print00Log.pas' {frm_Print00Log},
+  Form.Print00 in 'forms\Form.Print00.pas' {frm_Print00},
+  Form.Print00List in 'forms\Form.Print00List.pas' {frm_Print00List},
+  Form.PrinterPP00 in 'forms\Form.PrinterPP00.pas' {frm_PrinterPP00},
+  Form.Etiqueta in 'forms\Form.Etiqueta.pas' {frm_ConfigEtq},
+  Form.BaseEtqRL in 'forms\Form.BaseEtqRL.pas' {frm_BaseETQ};
 
 {$R *.res}
 {$R UAC.res}

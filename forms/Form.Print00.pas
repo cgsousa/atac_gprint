@@ -73,6 +73,14 @@ begin
         Exit ;
     end ;
 
+    if cbx_DefCol.ItemIndex < 0 then
+    begin
+        CMsgDlg.Warning('O numero de colunas deve ser informado!');
+        cbx_DefCol.SetFocus ;
+        Exit ;
+    end ;
+
+
     p00.pr0_modelo :=cbx_Modelo.Text ;
 //    p00.pr0_nporta :=cbx_NPorta.Text ;
 //    p00.pr0_xhost :=edt_Host.Text ;
@@ -201,6 +209,7 @@ begin
         gbx_Active.Caption :='Impressora padrão';
         btn_Print.Enabled :=False;
         p00 :=TCPrinter00.Create ;
+        cbx_DefCol.ItemIndex :=0;
         ActiveControl :=cbx_Modelo;
     end;
     btn_Apply.Enabled :=False ;

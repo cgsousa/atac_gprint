@@ -1,0 +1,477 @@
+object frm_PrinterPP00: Tfrm_PrinterPP00
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Configura ponto Produ'#231#227'o/Impress'#227'o'
+  ClientHeight = 572
+  ClientWidth = 794
+  Color = clWindow
+  Ctl3D = False
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 14
+  object JvGradient1: TJvGradient
+    Left = 0
+    Top = 0
+    Width = 794
+    Height = 532
+    Style = grVertical
+    StartColor = clWindow
+    EndColor = clSilver
+    ExplicitTop = 2
+  end
+  object lbl_Alert: TLabel
+    Left = 127
+    Top = 40
+    Width = 200
+    Height = 14
+    AutoSize = False
+    Caption = 'F2 altera descri'#231#227'o'
+    Color = clInfoBk
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -9
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object pnl_Footer: TJvFooter
+    Left = 0
+    Top = 532
+    Width = 794
+    Height = 40
+    Align = alBottom
+    BevelStyle = bsRaised
+    BevelVisible = True
+    DesignSize = (
+      794
+      40)
+    object btn_ClearHost: TJvSpeedButton
+      Left = 333
+      Top = 6
+      Width = 100
+      Height = 30
+      Caption = 'Limpar Portas'
+      OnClick = btn_ClearHostClick
+    end
+    object btn_ClearPrint: TJvSpeedButton
+      Left = 439
+      Top = 5
+      Width = 100
+      Height = 30
+      Margins.Top = 0
+      Caption = 'Limpar Impress'#245'es'
+      Spacing = -5
+      WordWrap = True
+      OnClick = btn_ClearPrintClick
+    end
+    object btn_Apply: TJvFooterBtn
+      Left = 582
+      Top = 5
+      Width = 100
+      Height = 30
+      Anchors = [akRight, akBottom]
+      Caption = 'Gravar'
+      TabOrder = 0
+      OnClick = btn_ApplyClick
+      ButtonIndex = 3
+      SpaceInterval = 6
+    end
+    object btn_Close: TJvFooterBtn
+      Left = 686
+      Top = 5
+      Width = 100
+      Height = 30
+      Anchors = [akRight, akBottom]
+      Caption = 'Fechar'
+      TabOrder = 1
+      OnClick = btn_CloseClick
+      ButtonIndex = 4
+      SpaceInterval = 6
+    end
+    object cbx_HostList: TAdvComboBox
+      Left = 127
+      Top = 8
+      Width = 200
+      Height = 24
+      AutoComplete = False
+      Color = clWindow
+      Version = '1.5.1.0'
+      Visible = True
+      Style = csDropDownList
+      EmptyTextStyle = []
+      CharCase = ecUpperCase
+      DropWidth = 0
+      Enabled = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ItemIndex = -1
+      LabelCaption = 'Computadores:'
+      LabelMargin = 2
+      LabelTransparent = True
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clWindowText
+      LabelFont.Height = -13
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object cbx_PPro: TAdvComboBox
+    Left = 127
+    Top = 10
+    Width = 200
+    Height = 24
+    Color = clWindow
+    Version = '1.5.1.0'
+    Visible = True
+    Style = csDropDownList
+    EmptyTextStyle = []
+    FocusBorder = True
+    FocusBorderColor = clHighlight
+    DropWidth = 0
+    Enabled = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ItemIndex = -1
+    LabelCaption = 'Ponto de Produ'#231#227'o:'
+    LabelMargin = 5
+    LabelFont.Charset = DEFAULT_CHARSET
+    LabelFont.Color = clNavy
+    LabelFont.Height = -13
+    LabelFont.Name = 'Tahoma'
+    LabelFont.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnChange = cbx_PProChange
+    OnEnter = cbx_PProEnter
+    OnExit = cbx_PProExit
+    OnKeyDown = cbx_PProKeyDown
+  end
+  object gbx_PrintDef: TAdvGroupBox
+    Left = 8
+    Top = 60
+    Width = 713
+    Height = 253
+    Caption = 'Impressora padr'#227'o'
+    TabOrder = 2
+    DesignSize = (
+      713
+      253)
+    object btn_Remove: TJvSpeedButton
+      Left = 453
+      Top = 208
+      Width = 100
+      Height = 30
+      Anchors = [akRight, akBottom]
+      Caption = 'Remover'
+      OnClick = btn_RemoveClick
+      ExplicitTop = 200
+    end
+    object btn_Print: TJvSpeedButton
+      Left = 574
+      Top = 208
+      Width = 100
+      Height = 30
+      Anchors = [akRight, akBottom]
+      Caption = 'Pag. Teste'
+      OnClick = btn_PrintClick
+      ExplicitTop = 200
+    end
+    object RTFLabel1: TRTFLabel
+      Left = 349
+      Top = 165
+      Width = 332
+      Height = 39
+      RichText = 
+        '{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;' +
+        '}}'#13#10'{\colortbl ;\red255\green0\blue0;}'#13#10'\viewkind4\uc1\pard\cf1\' +
+        'lang1046\i\fs16 Nota: S\'#39'f3 pode existir uma porta de impress\'#39'e' +
+        '3o parcial definida  por terminal!\cf0\i0\par'#13#10'}'#13#10#0
+      WordWrap = True
+      Version = '1.3.2.2'
+    end
+    object cbx_Modelo: TAdvComboBox
+      Left = 119
+      Top = 39
+      Width = 200
+      Height = 24
+      AutoComplete = False
+      Color = clWindow
+      Version = '1.5.1.0'
+      Visible = True
+      Style = csDropDownList
+      EmptyTextStyle = []
+      FocusBorder = True
+      FocusBorderColor = clHighlight
+      DropWidth = 0
+      Enabled = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ItemIndex = -1
+      LabelCaption = 'Modelo da Impressora:'
+      LabelPosition = lpTopLeft
+      LabelMargin = 2
+      LabelTransparent = True
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clNavy
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object cbx_NPorta: TAdvComboBox
+      Left = 119
+      Top = 92
+      Width = 200
+      Height = 24
+      AutoComplete = False
+      Color = clWindow
+      Version = '1.5.1.0'
+      Visible = True
+      Style = csDropDownList
+      EmptyTextStyle = []
+      FocusBorder = True
+      FocusBorderColor = clHighlight
+      CharCase = ecUpperCase
+      DropWidth = 0
+      Enabled = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ItemIndex = -1
+      Items.Strings = (
+        '')
+      LabelCaption = 'Porta:'
+      LabelPosition = lpTopLeft
+      LabelMargin = 2
+      LabelTransparent = True
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clNavy
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnSelect = cbx_NPortaSelect
+    end
+    object cbx_Host: TAdvComboBox
+      Left = 119
+      Top = 144
+      Width = 200
+      Height = 24
+      AutoComplete = False
+      Color = clWindow
+      Version = '1.5.1.0'
+      Visible = True
+      EmptyTextStyle = []
+      FocusBorder = True
+      FocusBorderColor = clHighlight
+      CharCase = ecUpperCase
+      DropWidth = 0
+      Enabled = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ItemIndex = -1
+      LabelCaption = 'Computador:'
+      LabelPosition = lpTopLeft
+      LabelMargin = 2
+      LabelTransparent = True
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clNavy
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object edt_MaxTenta: TAdvSpinEdit
+      Left = 349
+      Top = 40
+      Width = 121
+      Height = 26
+      Value = 0
+      DateValue = 43202.671895613430000000
+      HexValue = 0
+      CheckMinValue = True
+      CheckMaxValue = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      IncrementFloat = 0.100000000000000000
+      IncrementFloatPage = 1.000000000000000000
+      LabelCaption = 'Tentativas:'
+      LabelPosition = lpTopLeft
+      LabelMargin = 2
+      LabelTransparent = True
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clNavy
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      MaxValue = 9
+      ParentFont = False
+      TabOrder = 3
+      Visible = True
+      Version = '1.6.0.0'
+    end
+    object edt_NumCopy: TAdvSpinEdit
+      Left = 349
+      Top = 92
+      Width = 121
+      Height = 26
+      Value = 1
+      FloatValue = 1.000000000000000000
+      TimeValue = 0.041666666666666660
+      HexValue = 0
+      CheckMinValue = True
+      CheckMaxValue = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      IncrementFloat = 0.100000000000000000
+      IncrementFloatPage = 1.000000000000000000
+      LabelCaption = 'Copias:'
+      LabelPosition = lpTopLeft
+      LabelMargin = 2
+      LabelTransparent = True
+      LabelFont.Charset = DEFAULT_CHARSET
+      LabelFont.Color = clNavy
+      LabelFont.Height = -11
+      LabelFont.Name = 'Tahoma'
+      LabelFont.Style = []
+      MaxValue = 9
+      MinValue = 1
+      ParentFont = False
+      TabOrder = 4
+      Visible = True
+      Version = '1.6.0.0'
+    end
+    object btn_NumTenta: TAdvGlowButton
+      Left = 476
+      Top = 39
+      Width = 198
+      Height = 30
+      NotesFont.Charset = DEFAULT_CHARSET
+      NotesFont.Color = clWindowText
+      NotesFont.Height = -11
+      NotesFont.Name = 'Tahoma'
+      NotesFont.Style = []
+      TabOrder = 5
+      OnClick = btn_NumTentaClick
+      Appearance.ColorChecked = 16111818
+      Appearance.ColorCheckedTo = 16367008
+      Appearance.ColorDisabled = 15921906
+      Appearance.ColorDisabledTo = 15921906
+      Appearance.ColorDown = 16111818
+      Appearance.ColorDownTo = 16367008
+      Appearance.ColorHot = 16117985
+      Appearance.ColorHotTo = 16372402
+      Appearance.ColorMirrorHot = 16107693
+      Appearance.ColorMirrorHotTo = 16775412
+      Appearance.ColorMirrorDown = 16102556
+      Appearance.ColorMirrorDownTo = 16768988
+      Appearance.ColorMirrorChecked = 16102556
+      Appearance.ColorMirrorCheckedTo = 16768988
+      Appearance.ColorMirrorDisabled = 11974326
+      Appearance.ColorMirrorDisabledTo = 15921906
+    end
+    object chk_IndParcial: TAdvOfficeCheckBox
+      Left = 349
+      Top = 144
+      Width = 200
+      Height = 20
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      Alignment = taLeftJustify
+      ButtonVertAlign = tlCenter
+      Caption = 'Indicador de impress'#227'o parcial'
+      ReturnIsTab = False
+      Version = '1.3.7.0'
+    end
+  end
+  object cbx_PPGrupo: TAdvComboBox
+    Left = 521
+    Top = 8
+    Width = 200
+    Height = 24
+    Color = clWindow
+    Version = '1.5.1.0'
+    Visible = True
+    Style = csDropDownList
+    EmptyTextStyle = []
+    FocusBorder = True
+    FocusBorderColor = clHighlight
+    DropWidth = 0
+    Enabled = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ItemIndex = -1
+    LabelCaption = 'Ponto de Agrupamento:'
+    LabelMargin = 5
+    LabelFont.Charset = DEFAULT_CHARSET
+    LabelFont.Color = clNavy
+    LabelFont.Height = -13
+    LabelFont.Name = 'Tahoma'
+    LabelFont.Style = []
+    ParentFont = False
+    TabOrder = 3
+    TabStop = False
+  end
+  object DCP_sha11: TDCP_sha1
+    Id = 2
+    Algorithm = 'SHA1'
+    HashSize = 160
+    Left = 656
+    Top = 56
+  end
+  object ACBrPosPrinter1: TACBrPosPrinter
+    ConfigBarras.MostrarCodigo = False
+    ConfigBarras.LarguraLinha = 0
+    ConfigBarras.Altura = 0
+    ConfigBarras.Margem = 0
+    ConfigQRCode.Tipo = 2
+    ConfigQRCode.LarguraModulo = 4
+    ConfigQRCode.ErrorLevel = 0
+    LinhasEntreCupons = 0
+    Left = 584
+    Top = 56
+  end
+end

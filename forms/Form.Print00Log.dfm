@@ -41,71 +41,91 @@ object frm_Print00Log: Tfrm_Print00Log
     Align = alBottom
     BevelStyle = bsRaised
     BevelVisible = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Trebuchet MS'
+    Font.Style = []
+    ParentFont = False
     DesignSize = (
       634
       40)
-    object btn_Start: TJvFooterBtn
+    object btn_Close: TJvFooterBtn
+      Left = 541
+      Top = 5
+      Width = 85
+      Height = 30
+      Anchors = [akRight, akBottom]
+      Caption = 'Fechar'
+      TabOrder = 0
+      OnClick = btn_CloseClick
+      ButtonIndex = 0
+      SpaceInterval = 6
+    end
+    object btn_Config: TJvFooterBtn
       Left = 8
       Top = 5
-      Width = 100
+      Width = 85
+      Height = 30
+      Anchors = [akLeft, akBottom]
+      Caption = 'Configura'#231#245'es'
+      TabOrder = 5
+      OnClick = btn_ConfigClick
+      Alignment = taLeftJustify
+      Color = clInactiveCaption
+      ButtonIndex = 1
+      SpaceInterval = 6
+    end
+    object btn_Start: TJvFooterBtn
+      Left = 97
+      Top = 5
+      Width = 85
       Height = 30
       Anchors = [akLeft, akBottom]
       Caption = 'Come'#231'ar'
       TabOrder = 1
       OnClick = btn_StartClick
       Alignment = taLeftJustify
-      ButtonIndex = 0
-      SpaceInterval = 6
-    end
-    object btn_Close: TJvFooterBtn
-      Left = 526
-      Top = 5
-      Width = 100
-      Height = 30
-      Anchors = [akRight, akBottom]
-      Caption = 'Fechar'
-      TabOrder = 0
-      OnClick = btn_CloseClick
-      ButtonIndex = 1
+      ButtonIndex = 2
       SpaceInterval = 6
     end
     object btn_Stop: TJvFooterBtn
-      Left = 112
+      Left = 188
       Top = 5
-      Width = 100
+      Width = 85
       Height = 30
       Anchors = [akLeft, akBottom]
       Caption = 'Parar'
       TabOrder = 2
       OnClick = btn_StopClick
       Alignment = taLeftJustify
-      ButtonIndex = 2
+      ButtonIndex = 3
       SpaceInterval = 6
     end
     object btn_Printers: TJvFooterBtn
-      Left = 218
+      Left = 279
       Top = 5
-      Width = 100
+      Width = 85
       Height = 30
       Anchors = [akLeft, akBottom]
       Caption = 'Impressoras'
       TabOrder = 3
       OnClick = btn_PrintersClick
       Alignment = taLeftJustify
-      ButtonIndex = 3
+      ButtonIndex = 4
       SpaceInterval = 6
     end
     object btn_PProd: TJvFooterBtn
-      Left = 324
+      Left = 370
       Top = 5
-      Width = 121
+      Width = 115
       Height = 30
       Anchors = [akLeft, akBottom]
       Caption = 'Pontos de Produ'#231#227'o'
       TabOrder = 4
       OnClick = btn_PProdClick
       Alignment = taLeftJustify
-      ButtonIndex = 4
+      ButtonIndex = 5
       SpaceInterval = 6
     end
   end

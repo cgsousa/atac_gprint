@@ -77,6 +77,7 @@ object frm_Print00List: Tfrm_Print00List
       Anchors = [akLeft, akBottom]
       Caption = 'Inativar'
       TabOrder = 3
+      Visible = False
       Alignment = taLeftJustify
       ButtonIndex = 3
       SpaceInterval = 6

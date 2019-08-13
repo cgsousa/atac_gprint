@@ -11,16 +11,23 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Menus,
-  JvExStdCtrls, JvButton, JvCtrls, JvFooter, ExtCtrls,
+  Dialogs, StdCtrls, Menus, ExtCtrls,
+  Generics.Collections ,
+  JvExStdCtrls, JvButton, JvCtrls, JvFooter,
   JvExExtCtrls, JvExtComponent, JvExControls, JvGradient, JvMemo, JvRichEdit,
   JvComponentBase, JvTrayIcon, JvAppInst, JvTimer,
-  uclass, ulog, uTaskDlg
+  FormBase, uclass, ulog, uTaskDlg
   ;
 
 
 type
-  Tfrm_Print00Log = class(TForm)
+  RegPrint = record
+    doc_MostraCodPro: TPair<string, Boolean>;
+    procedure Load() ;
+  end;
+
+type
+  Tfrm_Print00Log = class(TBaseForm)
     pnl_Footer: TJvFooter;
     btn_Start: TJvFooterBtn;
     btn_Close: TJvFooterBtn;
@@ -32,6 +39,7 @@ type
     JvTrayIcon1: TJvTrayIcon;
     JvAppInstances1: TJvAppInstances;
     JvTimer1: TJvTimer;
+    btn_Config: TJvFooterBtn;
     procedure btn_StartClick(Sender: TObject);
     procedure btn_StopClick(Sender: TObject);
     procedure btn_PrintersClick(Sender: TObject);
@@ -40,10 +48,12 @@ type
     procedure FormCreate(Sender: TObject);
     procedure JvTimer1Timer(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure btn_ConfigClick(Sender: TObject);
 
   private
     { Private declarations }
     terminal_id: string;
+    m_Reg: RegPrint ;
     procedure OnINI(Sender: TObject);
     procedure OnEND(Sender: TObject);
     procedure OnLOG(Sender: TObject; const StrLog: string);
@@ -72,9 +82,9 @@ implementation
 
 uses IOUtils, DateUtils, DB ,
   uadodb,
-  uprinter,
-  Form.Print00List, Form.PrinterPP00
-  ,Form.Etiqueta
+  uprinter, uparam ,
+  Form.Print00List, Form.PrinterPP00 ,
+  Form.ParametroList
   ;
 
 
@@ -85,6 +95,24 @@ begin
 //    Self.Close ;
 //    Application.Minimize ;
     JvTrayIcon1.HideApplication ;
+end;
+
+procedure Tfrm_Print00Log.btn_ConfigClick(Sender: TObject);
+var
+  pwd: string ;
+begin
+    if not InputQueryDlg('Acesso aos Parametros do Sistema','Informe a senha:', pwd) then
+    begin
+        Exit;
+    end;
+    if not ChkPwd(pwd) then
+    begin
+        CMsgDlg.Warning('Senha inválida!') ;
+        Exit;
+    end;
+    //
+    // load parms nfe
+    Tfrm_ParametroList.lp_Show('GPRINT') ;
 end;
 
 procedure Tfrm_Print00Log.btn_PProdClick(Sender: TObject);
@@ -126,7 +154,7 @@ var
   p00List: TCPrinter00List; //Lista de impressoras
   p00: TCPrinter00 ;
   p01List: TCPrinter01List;
-  p1,p2: TCPrinter01;
+  p1,p2,p3: TCPrinter01; //
   pp00: TCPrinterPP00 ; //Ponto produção
   pp01: TCPrinterPP01 ; //Porta do PP / terminal
 var
@@ -164,6 +192,14 @@ begin
                     // processamento de cada ponto de produção
                     for p2 in p1.Items do
                     begin
+
+                        //
+                        // check se abort impressao
+                        if p2.status =psAbort then
+                        begin
+                            Continue;
+                        end;
+
                         TSWLog.Add('%s|Iniciando impressão',[p2.descri]);
 
                         //
@@ -206,9 +242,9 @@ begin
                                 end;
 
                                 p00.pr0_xhost :=pp01.pp1_xhost ;
-                                p00.NumCop    :=pp01.pp1_numcop ;
+                                p00.NumCop    :=pp01.pp1_numcop;
 
-                                p2.DoPreparePrint(doc, p00) ;
+                                p2.DoPreparePrint(doc, p00, m_Reg.doc_MostraCodPro.Value) ;
                                 if p00.Execute(doc) then
                                 begin
                                     p2.setPrintStatus ;
@@ -229,6 +265,15 @@ begin
                                         // inc. tentativa
                                         pp01.pp1_numttv :=pp01.pp1_numttv +1;
                                         pp00.DoMerge(pp01);
+                                    end;
+                                    //
+                                    // chk PP qdo agrupamento,
+                                    // para abortar impressão tbm
+                                    p3 :=p1.IndexOf(p2.codppr) ;
+                                    if p3 <> nil then
+                                    begin
+                                        p3.status :=psAbort ;
+                                        TSWLog.Add('%s|Abortado',[p3.descri]);
                                     end;
                                 end;
                             end
@@ -292,6 +337,7 @@ begin
             Empresa :=TCEmpresa.Instance ;
             Empresa.DoLoad(1);
         end;
+        m_Reg.Load ;
 
         CRec.OnIni :=Self.OnINI;
         CRec.OnEnd :=Self.OnEND;
@@ -385,9 +431,9 @@ procedure Tfrm_Print00Log.OnEND(Sender: TObject);
 begin
     btn_Start.Enabled:=True;
     btn_Stop.Enabled :=False;
-//    btn_Stop.Visible :=False ;
     btn_Printers.Enabled:=True;
     btn_PProd.Enabled:=True;
+    btn_Config.Enabled:=True;
     TSWLog.Add('Parou serviço do Gerenciador de Impressão');
     ConnectionADO.Close;
 end;
@@ -397,9 +443,9 @@ begin
     mmo_Log.Clear ;
     btn_Start.Enabled:=False;
     btn_Stop.Enabled :=True;
-//    btn_Stop.Visible :=False ;
     btn_Printers.Enabled:=False;
     btn_PProd.Enabled:=False;
+    btn_Config.Enabled:=False;
     TSWLog.Add('Iniciou serviço do Gerenciador de Impressão');
 end;
 
@@ -418,5 +464,43 @@ begin
     mmo_Log.Perform( EM_SCROLLCARET, 0, 0 ); {::garantir a exibição é correto}
 end;
 
+
+{ RegPrint }
+
+procedure RegPrint.Load;
+const
+  CST_CATEGO = 'GPRINT' ;
+var
+  params: TCParametroList ;
+  p: TCParametro ;
+begin
+
+    params :=TCParametroList.Create ;
+    try
+        //
+        // carrega todos do nfe
+        params.Load('', CST_CATEGO) ;
+
+        //
+        //
+        //
+        doc_MostraCodPro.Key :='doc_mostracodpro';
+        p :=params.IndexOf(doc_MostraCodPro.Key) ;
+        if p = nil then
+        begin
+            p :=params.AddNew(doc_MostraCodPro.Key) ;
+            p.ValTyp:=ftBoolean ;
+            P.xValor :='1';
+            P.Catego :='GPRINT';
+            p.Descricao :='Indicador para mostrar/esconder o cod.produto';
+            P.Save ;
+        end;
+        doc_MostraCodPro.Value :=p.ReadBoo() ;
+
+    finally
+        params.Free ;
+    end;
+
+end;
 
 end.

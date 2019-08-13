@@ -1,0 +1,139 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{D725887D-6A87-4ECB-98F6-D49AE034CF28}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>ATAC_SVC_GPRINT.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_DcuOutput>..\bin\dcu\</DCC_DcuOutput>
+			<DCC_DependencyCheckOutputName>..\bin\ATAC_SVC_GPRINT.exe</DCC_DependencyCheckOutputName>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_ExeOutput>..\bin\</DCC_ExeOutput>
+			<DCC_UnitSearchPath>D:\develop\lib\delphi\sistem.lib\units;D:\develop\lib\delphi\sistem.lib\view;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="ATAC_SVC_GPRINT.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="view\Svc.GPrint.pas">
+				<Form>svc_GPrint</Form>
+				<DesignClass>TService</DesignClass>
+			</DCCReference>
+			<DCCReference Include="units\Thread.Printer.pas"/>
+			<DCCReference Include="units\uprinter.pas"/>
+			<DCCReference Include="view\Form.MainView.pas">
+				<Form>frm_MainView</Form>
+			</DCCReference>
+			<DCCReference Include="view\Form.LogView.pas">
+				<Form>frm_LogView</Form>
+			</DCCReference>
+			<DCCReference Include="forms\Form.Print00.pas">
+				<Form>frm_Print00</Form>
+			</DCCReference>
+			<DCCReference Include="forms\Form.Print00List.pas">
+				<Form>frm_Print00List</Form>
+			</DCCReference>
+			<DCCReference Include="forms\Form.PrinterPP00.pas">
+				<Form>frm_PrinterPP00</Form>
+			</DCCReference>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">ATAC_SVC_GPRINT.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+						<Parameters Name="RunParams">/app</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">2</VersionInfo>
+						<VersionInfo Name="Release">4</VersionInfo>
+						<VersionInfo Name="Build">2075</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1046</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.2.4.2075</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Comum.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Comum.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_OpenSSL.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_OpenSSL.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Diversos.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Diversos.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Serial.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Serial.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Sintegra.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Sintegra.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_TCP.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_TCP.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Boleto.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Boleto.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Integrador.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_Integrador.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_NFe.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_NFe.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_NFCeECFVirtual.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_NFCeECFVirtual.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_NFeDanfeESCPOS.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_NFeDanfeESCPOS.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_TEFD.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_TEFD.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_NFeDanfeRL.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_NFeDanfeRL.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_BoletoRL.bpl">File D:\develop\ACBr\Lib\Delphi\LibD14\ACBr_BoletoRL.bpl not found</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

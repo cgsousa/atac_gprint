@@ -37,18 +37,18 @@
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="forms"/>
-    <File Path="forms\Form.Print00Log.pas"/>
-    <File Path="forms\Form.Print00Log.dfm"/>
+    <File Path="forms\Form.BaseEtqRL.pas"/>
+    <File Path="forms\Form.BaseEtqRL.dfm"/>
+    <File Path="forms\Form.Etiqueta.pas"/>
+    <File Path="forms\Form.Etiqueta.dfm"/>
     <File Path="forms\Form.Print00.pas"/>
     <File Path="forms\Form.Print00.dfm"/>
     <File Path="forms\Form.Print00List.pas"/>
     <File Path="forms\Form.Print00List.dfm"/>
+    <File Path="forms\Form.Print00Log.pas"/>
+    <File Path="forms\Form.Print00Log.dfm"/>
     <File Path="forms\Form.PrinterPP00.pas"/>
     <File Path="forms\Form.PrinterPP00.dfm"/>
-    <File Path="forms\Form.Etiqueta.pas"/>
-    <File Path="forms\Form.Etiqueta.dfm"/>
-    <File Path="forms\Form.BaseEtqRL.pas"/>
-    <File Path="forms\Form.BaseEtqRL.dfm"/>
     <File Path="units"/>
     <File Path="units\uprinter.pas"/>
   </ProjectSortOrder>
